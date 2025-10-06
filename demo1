@@ -9,4 +9,11 @@ resource "aws_instance" "instance-1" {
       "sudo systemctl start nginx"
     ]
   }
+
+  provisioner "local-exec" {
+    inline = [
+      "sudo amazon-linux-extras install -y nginx1",
+      "sudo systemctl start nginx"
+    ]
+  }
 }
